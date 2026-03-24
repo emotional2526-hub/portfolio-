@@ -1,13 +1,17 @@
-window.addEventListener("scroll", function() {
-    const cards = document.querySelectorAll(".card, .project-card");
+const sections = document.querySelectorAll(".section");
 
-    cards.forEach(card => {
-        const position = card.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
-
-        if(position < screenPosition) {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
+window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+        const position = section.getBoundingClientRect().top;
+        if(position < window.innerHeight - 100) {
+            section.style.opacity = "1";
+            section.style.transform = "translateY(0)";
         }
     });
+});
+
+sections.forEach(section => {
+    section.style.opacity = "0";
+    section.style.transform = "translateY(50px)";
+    section.style.transition = "all 1s ease";
 });

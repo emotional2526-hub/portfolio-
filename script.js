@@ -1,44 +1,52 @@
+// Loader
+window.addEventListener("load",()=>{
+document.getElementById("loader").style.display="none";
+});
+
 // Typing Effect
-const textArray = ["Frontend Developer", "AI Enthusiast", "Creative Coder"];
-let index = 0;
-let charIndex = 0;
-const typingElement = document.querySelector(".typing");
+const textArray=["Frontend Developer","AI Enthusiast","Creative Coder"];
+let i=0,j=0;
+const typing=document.querySelector(".typing");
 
-function type() {
-if(charIndex < textArray[index].length){
-typingElement.textContent += textArray[index].charAt(charIndex);
-charIndex++;
-setTimeout(type, 100);
-}else{
-setTimeout(erase, 1500);
+function type(){
+if(j<textArray[i].length){
+typing.textContent+=textArray[i][j++];
+setTimeout(type,100);
+}else setTimeout(erase,1500);
 }
-}
-
 function erase(){
-if(charIndex > 0){
-typingElement.textContent = textArray[index].substring(0, charIndex-1);
-charIndex--;
-setTimeout(erase, 50);
-}else{
-index = (index+1)%textArray.length;
-setTimeout(type, 200);
-}
+if(j>0){
+typing.textContent=textArray[i].substring(0,--j);
+setTimeout(erase,50);
+}else{ i=(i+1)%textArray.length; setTimeout(type,200); }
 }
 type();
 
-// Mouse Parallax
-document.addEventListener("mousemove", e=>{
-document.querySelector(".hero-image").style.transform =
-`translate(${e.clientX*0.01}px,${e.clientY*0.01}px)`;
+// Scroll Progress
+window.onscroll=function(){
+let winScroll=document.body.scrollTop||document.documentElement.scrollTop;
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+let scrolled=(winScroll/height)*100;
+document.getElementById("progress-bar").style.width=scrolled+"%";
+};
+
+// Custom Cursor
+const cursor=document.querySelector(".cursor");
+document.addEventListener("mousemove",e=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
 });
 
-// Particles
-tsParticles.load("particles-js",{
-particles:{
-number:{value:60},
-size:{value:2},
-move:{speed:1},
-links:{enable:true,color:"#38bdf8"},
-color:{value:"#a78bfa"}
+// Modal
+function openModal(src){
+document.getElementById("modal").style.display="flex";
+document.getElementById("modal-img").src=src;
 }
-});
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+// Dark Mode
+function toggleTheme(){
+document.body.classList.toggle("light-mode");
+}

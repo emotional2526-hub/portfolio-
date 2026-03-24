@@ -3,72 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shreyanka | Creative Portfolio</title>
+<title>Shreyanka | Creative Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<!-- Particles Library -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 </head>
+
 <body>
 
+<div id="particles-js"></div>
+
+<nav>
+    <h2 class="logo">Shreyanka.</h2>
+    <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
 <header class="hero">
-    <nav>
-        <h2 class="logo">Shreyanka.</h2>
-        <ul>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="hero-text">
+        <h1>Hi, I'm <span>Shreyanka</span></h1>
+        <h2 class="typing"></h2>
+        <p>I design and build modern digital experiences with creativity & clean code.</p>
 
-    <div class="hero-content">
-        <div class="text">
-            <h1>Creative <br><span>Frontend</span> Developer</h1>
-            <p>I build modern, animated and user-focused digital experiences.</p>
-            <a href="#work" class="btn">Explore Work</a>
+        <div class="hero-buttons">
+            <a href="#work" class="btn">View Work</a>
+            <a href="resume.pdf" download class="btn-outline">Download Resume</a>
         </div>
+    </div>
 
-        <div class="image">
-            <img src="images/profile.jpg" alt="Profile">
-        </div>
+    <div class="hero-image">
+        <img src="images/profile.jpg" alt="Profile">
     </div>
 </header>
 
-<section id="work" class="section">
+<section id="work" class="section glass">
     <h2>Featured Projects</h2>
 
     <div class="project">
-        <img src="images/project1.jpg" alt="">
-        <div class="project-info">
+        <img src="images/project1.jpg">
+        <div>
             <h3>Network Simulation</h3>
-            <p>Interactive networking project demonstrating IP addressing & LAN concepts.</p>
+            <p>Interactive networking project demonstrating LAN, IP & routing concepts.</p>
         </div>
     </div>
 
-    <div class="project reverse">
-        <img src="images/project2.jpg" alt="">
-        <div class="project-info">
+    <div class="project">
+        <img src="images/project2.jpg">
+        <div>
             <h3>AI Mini Project</h3>
-            <p>Implemented a deep learning model to understand neural network fundamentals.</p>
+            <p>Deep learning model implementation for understanding neural networks.</p>
         </div>
     </div>
 </section>
 
-<section id="about" class="section center">
+<section id="about" class="section glass">
     <h2>About Me</h2>
-    <p>
-        MCA student passionate about frontend development and AI.
-        I love building smooth, animated and modern web applications.
-    </p>
+    <p>MCA student passionate about Frontend Development, AI, and building beautiful animated user interfaces.</p>
 </section>
 
-<section id="contact" class="section center">
+<section id="contact" class="section glass center">
     <h2>Let's Connect</h2>
     <p>Email: your-email@gmail.com</p>
     <p>LinkedIn: linkedin.com/in/shreyanka-b-a-12aa35378</p>
 </section>
 
-<script src="script.js"></script>
-</body>
-</html>
 <script src="script.js"></script>
 </body>
 </html>

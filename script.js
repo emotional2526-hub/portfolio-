@@ -39,11 +39,13 @@ cursor.style.top=e.clientY+"px";
 
 // Modal
 function openModal(src){
-document.getElementById("modal").style.display="flex";
-document.getElementById("modal-img").src=src;
+    const modal = document.getElementById("modal");
+    modal.classList.add("show");
+    document.getElementById("modal-img").src = src;
 }
+
 function closeModal(){
-document.getElementById("modal").style.display="none";
+    document.getElementById("modal").classList.remove("show");
 }
 window.onclick = function(e) {
     let modal = document.getElementById("modal");

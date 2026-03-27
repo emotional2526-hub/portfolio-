@@ -45,7 +45,12 @@ document.getElementById("modal-img").src=src;
 function closeModal(){
 document.getElementById("modal").style.display="none";
 }
-
+window.onclick = function(e) {
+    let modal = document.getElementById("modal");
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+}
 // Dark Mode
 function toggleTheme(){
 document.body.classList.toggle("light-mode");
